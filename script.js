@@ -4,9 +4,9 @@ const clearBtn = document.getElementById('clear-btn');
 const resultsDiv = document.getElementById('results-div');
 
 function checkNumber() {
-  const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+  const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s-]?\d{3}[\s-]?\d{4}$/;
 
-  if (userInput.value === '') {
+  if (userInput.value.trim() === '') {
     alert('Please provide a phone number');
     return;
   }
@@ -15,11 +15,11 @@ function checkNumber() {
   resultsDiv.appendChild(item);
 
   if (regex.test(userInput.value)) {
-    item.innerHTML = `Valid US number: ${userInput.value}`;
+    item.textContent = `Valid US number: ${userInput.value}`;
     item.classList.add('valid');
     userInput.value = '';
   } else {
-    item.innerHTML = `Invalid US number: ${userInput.value}`;
+    item.textContent = `Invalid US number: ${userInput.value}`;
     item.classList.add('invalid');
     userInput.value = '';
   }
