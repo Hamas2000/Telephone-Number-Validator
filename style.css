@@ -60,3 +60,10 @@ h2 {
 #results-div {
   margin-top: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  #container {
+    width: 100%;
+    padding: 10px;
+  }
+}
